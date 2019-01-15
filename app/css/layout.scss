@@ -1,0 +1,11 @@
+/* 
+  关于页面布局 ---> 先整体在部分再颗粒化
+*/
+
+@charset "UTF-8";
+@mixin flex($direction:column, $inline:block) {
+    //方向
+    display: if($inline==block, flex, inline-flex);
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
