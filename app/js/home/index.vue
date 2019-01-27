@@ -1,19 +1,24 @@
 <template lang="html">
-    <div :class="$style.home">
-        <h1>Home</h1>
-        <p>abcs</p>
-    </div>
+  <div>
+    <Heador/>
+    <Slider/>
+    <Novice/>
+    <Footor/>
+    <Navbar/>
+  </div>
 </template>
 
 <script>
-export default {
-}
+  import Heador from "../public/header.vue";
+  import Navbar from "../public/navbar.vue";
+  import Footor from '../public/footer.vue';
+  import Slider from "./hslider.vue";
+  import Novice from "./novice.vue"
+
+  export default {
+    components: {
+      Heador, Footor, Navbar, Slider, Novice
+    }
+  };
 </script>
 
-<style lang="scss" module>
-  @import '../../css/reset.scss';
-  .home{
-    color: red;
-    font-size: 80px;
-  }
-</style>
