@@ -1,18 +1,6 @@
-/dist
-/WebPackager
 *.iml
 .DS_*
-.idea/
 *.z
 node_modules/
 .idea/
 dist/
-### macOS
-# General
-.DS_Store
-*.iml
-.AppleDouble
-.LSOverride
-*.zip
-bash.exe.stackdump
-package-lock.json
