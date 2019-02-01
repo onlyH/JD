@@ -1,44 +1,10 @@
 <template>
   <Panel title="导航条" :class="$style.panel">
     <ul :class="$style.content">
-      <li>
-        <route-link :to="{name:'home'}">
-          <img
-              src="//img12.360buyimg.com/jrpmobile/jfs/t3451/188/644771475/2428/800d7cb7/580f2435Nbfaa8055.png?width=66&height=66"
-              alt="">
-          <p>首页</p>
-        </route-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'money'}">
-          <img
-              src="//img12.360buyimg.com/jrpmobile/jfs/t3811/55/345433999/2930/116d3dd1/580f1e25N028a1f2c.png?width=66&height=66"
-              alt="">
-          <p>理财</p>
-        </router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'ious'}">
-          <img
-              src="//img12.360buyimg.com/jrpmobile/jfs/t3343/179/621044750/1484/5af6b11a/580f50e4N005181d0.png?width=66&height=66"
-              alt="">
-          <p>白条</p>
-        </router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'raise'}">
-          <img
-              src="//img12.360buyimg.com/jrpmobile/jfs/t3604/98/635506544/2317/443d3a51/580f240aNbee3dcc4.png?width=66&height=66"
-              alt="">
-          <p>众筹</p>
-        </router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'home'}">
-          <img
-              src="//img12.360buyimg.com/jrpmobile/jfs/t3340/68/639059082/2591/800e2d6b/580f51cdN4caf20b2.png?width=66&height=66"
-              alt="">
-          <p>我的</p>
+      <li v-for="info in infos">
+        <router-link :to="{ name: info.href}">
+          <img :src=info.url>
+          <p>{{info.title}}</p>
         </router-link>
       </li>
     </ul>
@@ -48,7 +14,38 @@
   import Panel from "../core/panel.vue";
 
   export default {
-    components: {Panel}
+    components: {Panel},
+    data() {
+      return {
+        infos: [
+          {
+            href: 'home',
+            url: "//img12.360buyimg.com/jrpmobile/jfs/t1/931/18/14488/935/5bda58fdE542c2cc7/f29a349a4ed750ca.png?width=60&height=60",
+            title: "首页"
+          },
+          {
+            href: 'money',
+            url: "//img12.360buyimg.com/jrpmobile/jfs/t1/93/2/15333/2159/5bda590eE721487cd/85ef52d2b68205ef.png?width=60&height=60",
+            title: "赚钱"
+          },
+          {
+            href: 'borrow',
+            url: "//img12.360buyimg.com/jrpmobile/jfs/t1/9698/36/4230/594/5bda5919Ec55e200a/dd949177311f04e7.png?width=60&height=60",
+            title: "借钱"
+          },
+          {
+            href: 'save',
+            url: "//img12.360buyimg.com/jrpmobile/jfs/t1/4948/14/14022/816/5bda5924Eb28b0d4c/fde0775f7c0e197d.png?width=60&height=60",
+            title: "省钱"
+          },
+          {
+            href: 'vip',
+            url: "//img12.360buyimg.com/jrpmobile/jfs/t1/5465/19/13992/926/5bda5932Ed6569f64/e58f749c755abad7.png?width=60&height=60",
+            title: "金融会员"
+          },
+        ]
+      }
+    }
   }
 </script>
 <style lang='scss' module>
